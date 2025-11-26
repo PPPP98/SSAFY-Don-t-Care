@@ -1,0 +1,68 @@
+@tailwind utilities;
+
+@layer utilities {
+  /* Onboarding-scoped utilities */
+
+  .onboarding .gradient-border {
+    position: relative;
+  }
+
+  .onboarding .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.35),
+      rgba(124, 58, 237, 0.4),
+      rgba(34, 211, 238, 0.4)
+    );
+    border-radius: calc(var(--RADIUS-XL) + 1px);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+    pointer-events: none;
+  }
+
+  .onboarding .divider-line {
+    @apply h-px w-full bg-white/15;
+  }
+
+  /* Fade mask to soften grid/noise toward edges */
+  .onboarding .mask-fade {
+    -webkit-mask-image: radial-gradient(70% 50% at 50% 30%, #000 60%, transparent 100%);
+    mask-image: radial-gradient(70% 50% at 50% 30%, #000 60%, transparent 100%);
+  }
+
+  /* Lightweight noise (dithered dots) for texture */
+  .onboarding .bg-noise {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+}
+
+/* Swiper pagination override (scoped to onboarding only) */
+.onboarding .swiper-pagination {
+  right: 16px;
+  top: 50%;
+  left: auto;
+  bottom: auto;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.onboarding .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+}
+
+.onboarding .swiper-pagination-bullet-active {
+  background: rgba(255, 255, 255, 1);
+}

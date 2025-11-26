@@ -1,0 +1,21 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+
+# 의존성
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 비특권 사용자
+# RUN adduser --disabled-password --gecos "" appuser && chown -R appuser:appuser /app
+
+# 앱 복사
+COPY . .
+
+# USER appuser
+# ENV PATH="/home/appuser/.local/bin:$PATH"
+
+EXPOSE 8000
+
+# Uvicorn은 main.py의 app을 PORT로 구동
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]

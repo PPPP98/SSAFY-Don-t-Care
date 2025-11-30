@@ -19,9 +19,9 @@
 
 ### 🖥️멀티 에이전트 시스템(MAS)
 
-**SuperVisor**패턴의 멀티 에이전트 아키텍처를 챗봇으로 구현하여 각 분야의 **전문 Agent**를 구성하였습니다.
+**Supervisor** 패턴 기반의 멀티 에이전트 아키텍처를 도입하여, 각 도메인에 특화된 전문 Agent들이 유기적으로 협업하는 챗봇 시스템을 구축했습니다(A2A & MCP 활용).
 
-![SuperVisor](./exec/images/supervisorimg.png)<br>
+![Supervisor](./exec/images/supervisorimg.png)<br>
 (출처 : LangChain)
 
 ### ADK와 SuperVisor Agent 패턴
@@ -93,7 +93,7 @@
 | **재무 분석 에이전트** | DART API 기반 기업 재무제표 분석 → 수익성/안정성/성장성 지표 도출 |
 | **기술적 분석 에이전트** | yfinance 기반 RSI, MACD, 이동평균선, 볼린저밴드 계산 → 전략 제안 |
 | **리스크 분석 에이전트** | 과거 주가 데이터 기반 백테스트 → 전략 리스크 및 수익성 평가(이동 평균선 & MACD 전략) |
-| **멀티 에이전트 라우팅** | Root Agent가 질문 의도 분석 후 적절한 전문 에이전트로 라우팅 |
+| **Supervisor 에이전트** | Root Agent가 질문 의도 분석 후 적절한 전문 에이전트로 라우팅 |
 | **투자 리포트 제공** | 종합 뉴스 + 재무 + 기술 + 백테스트 결과를 리포트 형태로 제공 |
 
 ---

@@ -21,7 +21,7 @@
 
 **SuperVisor**패턴의 멀티 에이전트 아키텍처를 챗봇으로 구현하여 각 분야의 **전문 Agent**를 구성하였습니다.
 
-![alt text](/SSAFY-Don-t-Care/exec/images/supervisorimg.png)<br>
+![SuperVisor](./exec/images/supervisorimg.png)<br>
 (출처 : LangChain)
 
 ### ADK와 SuperVisor Agent 패턴
